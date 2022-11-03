@@ -12,4 +12,3 @@ class BookViewSet(ModelViewSet):
     search_fields = ['name', 'author_name']
     filter_fields = ['price']
     ordering_fields = ['price', 'author_name']
-#cwqcqc
