@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.test import TestCase
 
 from store.models import Book
@@ -5,6 +6,15 @@ from store.serializers import BookSerializer
 
 
 class BookSerializerTestCase(TestCase):
+
+
+
+    @staticmethod
+    def setUpClass():
+        # The test runner sets DEBUG to False. Set to True to enable SQL logging.
+        settings.DEBUG = True
+        super(BookSerializerTestCase, BookSerializerTestCase).setUpClass()
+
     def test_ok(self):
         book1 = Book.objects.create(
             name='Test book1',
